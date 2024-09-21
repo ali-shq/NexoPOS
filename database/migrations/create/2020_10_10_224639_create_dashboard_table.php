@@ -16,7 +16,7 @@ return new class extends Migration
         if ( ! Schema::hasTable( 'nexopos_dashboard_days' ) ) {
             Schema::createIfMissing( 'nexopos_dashboard_days', function ( Blueprint $table ) {
                 if ( ! Schema::hasColumn( 'nexopos_dashboard_days', 'id' ) ) {
-                    $table->bigIncrements( 'id' );
+                    $table->id( 'id' );
                 }
             } );
         }
@@ -24,7 +24,7 @@ return new class extends Migration
         if ( Schema::hasTable( 'nexopos_dashboard_days' ) ) {
             Schema::table( 'nexopos_dashboard_days', function ( Blueprint $table ) {
                 if ( ! Schema::hasColumn( 'nexopos_dashboard_days', 'id' ) ) {
-                    $table->bigIncrements( 'id' );
+                    $table->id( 'id' );
                 }
 
                 foreach ( [
@@ -86,7 +86,7 @@ return new class extends Migration
         if ( ! Schema::hasTable( 'nexopos_dashboard_weeks' ) ) {
             Schema::createIfMissing( 'nexopos_dashboard_weeks', function ( Blueprint $table ) {
                 if ( ! Schema::hasColumn( 'nexopos_dashboard_weeks', 'id' ) ) {
-                    $table->bigIncrements( 'id' );
+                    $table->id( 'id' );
                 }
             } );
         }

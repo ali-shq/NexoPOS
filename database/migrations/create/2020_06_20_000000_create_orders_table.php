@@ -18,7 +18,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_orders' ) ) {
             Schema::createIfMissing( 'nexopos_orders', function ( Blueprint $table ) {
-                $table->bigIncrements( 'id' );
+                $table->id( 'id' );
                 $table->text( 'description' )->nullable();
                 $table->string( 'code' );
                 $table->string( 'title' )->nullable();
@@ -60,7 +60,7 @@ return new class extends Migration
 
         if ( ! Schema::hasTable( 'nexopos_orders_count' ) ) {
             Schema::createIfMissing( 'nexopos_orders_count', function ( Blueprint $table ) {
-                $table->bigIncrements( 'id' );
+                $table->id( 'id' );
                 $table->integer( 'count' );
                 $table->datetime( 'date' );
             } );
@@ -68,7 +68,7 @@ return new class extends Migration
 
         if ( ! Schema::hasTable( 'nexopos_orders_taxes' ) ) {
             Schema::createIfMissing( 'nexopos_orders_taxes', function ( Blueprint $table ) {
-                $table->bigIncrements( 'id' );
+                $table->id( 'id' );
                 $table->integer( 'tax_id' )->nullable();
                 $table->integer( 'order_id' )->nullable();
                 $table->float( 'rate' );

@@ -25,7 +25,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_users' ) ) {
             Schema::create( 'nexopos_users', function ( Blueprint $table ) {
-                $table->increments( 'id' );
+                $table->id( 'id' );
                 $table->string( 'username' );
                 $table->boolean( 'active' )->default( false );
                 $table->integer( 'author' )->nullable(); // the first user is created by him self

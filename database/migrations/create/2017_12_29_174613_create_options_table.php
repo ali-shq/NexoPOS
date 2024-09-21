@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::createIfMissing( 'nexopos_options', function ( Blueprint $table ) {
-            $table->increments( 'id' );
+            $table->id( 'id' );
             $table->integer( 'user_id' )->nullable();
             $table->string( 'key' );
             $table->text( 'value' )->nullable();

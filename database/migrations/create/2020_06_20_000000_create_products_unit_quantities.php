@@ -18,7 +18,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_products_unit_quantities' ) ) {
             Schema::createIfMissing( 'nexopos_products_unit_quantities', function ( Blueprint $table ) {
-                $table->bigIncrements( 'id' );
+                $table->id( 'id' );
                 $table->integer( 'product_id' );
                 $table->string( 'type' )->default( 'product' ); // product | variation
                 $table->string( 'preview_url' )->nullable();

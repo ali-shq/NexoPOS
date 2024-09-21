@@ -18,7 +18,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_transactions_accounts' ) ) {
             Schema::createIfMissing( 'nexopos_transactions_accounts', function ( Blueprint $table ) {
-                $table->bigIncrements( 'id' );
+                $table->id( 'id' );
                 $table->string( 'name' );
                 $table->string( 'operation' )->default( 'debit' ); // "credit" or "debit".
                 $table->string( 'account' )->default( 0 );

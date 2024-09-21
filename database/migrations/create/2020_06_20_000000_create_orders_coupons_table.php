@@ -18,7 +18,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_orders_coupons' ) ) {
             Schema::createIfMissing( 'nexopos_orders_coupons', function ( Blueprint $table ) {
-                $table->bigIncrements( 'id' );
+                $table->id( 'id' );
                 $table->string( 'code' );
                 $table->string( 'name' );
                 $table->integer( 'customer_coupon_id' );

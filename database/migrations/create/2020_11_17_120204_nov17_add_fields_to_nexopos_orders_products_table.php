@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::createIfMissing( 'nexopos_orders_refunds', function ( Blueprint $table ) {
-            $table->bigIncrements( 'id' );
+            $table->id( 'id' );
             $table->integer( 'order_id' );
             $table->integer( 'author' );
             $table->float( 'total', 18, 5 );
@@ -25,7 +25,7 @@ return new class extends Migration
         } );
 
         Schema::createIfMissing( 'nexopos_orders_products_refunds', function ( Blueprint $table ) {
-            $table->bigIncrements( 'id' );
+            $table->id( 'id' );
             $table->integer( 'order_id' );
             $table->integer( 'order_refund_id' );
             $table->integer( 'order_product_id' );

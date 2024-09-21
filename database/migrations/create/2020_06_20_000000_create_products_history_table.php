@@ -18,7 +18,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_products_histories' ) ) {
             Schema::createIfMissing( 'nexopos_products_histories', function ( Blueprint $table ) {
-                $table->bigIncrements( 'id' );
+                $table->id( 'id' );
                 $table->integer( 'product_id' );
                 $table->integer( 'procurement_id' )->nullable();
                 $table->integer( 'procurement_product_id' )->nullable();

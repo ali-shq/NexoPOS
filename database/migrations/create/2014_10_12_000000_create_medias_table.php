@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::createIfMissing( 'nexopos_medias', function ( Blueprint $table ) {
-            $table->increments( 'id' );
+            $table->id( 'id' );
             $table->string( 'name' )->unique();
             $table->string( 'extension' );
             $table->string( 'slug' );

@@ -17,7 +17,7 @@ return new class extends Migration
     public function up()
     {
         Schema::createIfMissing( 'nexopos_transactions', function ( Blueprint $table ) {
-            $table->bigIncrements( 'id' );
+            $table->id( 'id' );
             $table->string( 'name' );
             $table->integer( 'account_id' );
             $table->text( 'description' )->nullable();

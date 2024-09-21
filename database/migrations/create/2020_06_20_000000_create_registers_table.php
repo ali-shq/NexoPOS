@@ -18,7 +18,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_registers' ) ) {
             Schema::createIfMissing( 'nexopos_registers', function ( Blueprint $table ) {
-                $table->bigIncrements( 'id' );
+                $table->id( 'id' );
                 $table->string( 'name' );
                 $table->string( 'status' )->default( 'closed' ); // open, closed, disabled
                 $table->text( 'description' )->nullable();

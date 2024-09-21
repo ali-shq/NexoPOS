@@ -25,7 +25,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_permissions' ) ) {
             Schema::create( 'nexopos_permissions', function ( Blueprint $table ) {
-                $table->increments( 'id' );
+                $table->id( 'id' );
                 $table->string( 'name' )->unique();
                 $table->string( 'namespace' )->unique();
                 $table->text( 'description' );

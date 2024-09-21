@@ -18,7 +18,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_rewards_system_rules' ) ) {
             Schema::createIfMissing( 'nexopos_rewards_system_rules', function ( Blueprint $table ) {
-                $table->bigIncrements( 'id' );
+                $table->id( 'id' );
                 $table->float( 'from', 18, 5 );
                 $table->float( 'to', 18, 5 );
                 $table->float( 'reward', 18, 5 );

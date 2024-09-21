@@ -18,7 +18,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_products_taxes' ) ) {
             Schema::createIfMissing( 'nexopos_products_taxes', function ( Blueprint $table ) {
-                $table->bigIncrements( 'id' );
+                $table->id( 'id' );
                 $table->integer( 'product_id' );
                 $table->integer( 'unit_quantity_id' );
                 $table->string( 'tax_id' ); // grouped, simple

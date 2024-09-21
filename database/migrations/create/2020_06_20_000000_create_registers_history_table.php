@@ -18,7 +18,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_registers_history' ) ) {
             Schema::createIfMissing( 'nexopos_registers_history', function ( Blueprint $table ) {
-                $table->bigIncrements( 'id' );
+                $table->id( 'id' );
                 $table->integer( 'register_id' );
                 $table->integer( 'payment_id' )->nullable();
                 $table->integer( 'transaction_account_id' )->nullable();

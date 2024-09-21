@@ -13,7 +13,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_products_histories_combined' ) ) {
             Schema::create( 'nexopos_products_histories_combined', function ( Blueprint $table ) {
-                $table->increments( 'id' );
+                $table->id( 'id' );
                 $table->string( 'name' );
                 $table->date( 'date' );
                 $table->integer( 'product_id' );

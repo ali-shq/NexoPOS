@@ -18,7 +18,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_units_groups' ) ) {
             Schema::createIfMissing( 'nexopos_units_groups', function ( Blueprint $table ) {
-                $table->bigIncrements( 'id' );
+                $table->id( 'id' );
                 $table->string( 'name' );
                 $table->text( 'description' )->nullable();
                 $table->integer( 'author' );

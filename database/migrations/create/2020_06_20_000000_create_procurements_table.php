@@ -18,7 +18,7 @@ return new class extends Migration
     {
         if ( ! Schema::hasTable( 'nexopos_procurements' ) ) {
             Schema::createIfMissing( 'nexopos_procurements', function ( Blueprint $table ) {
-                $table->bigIncrements( 'id' );
+                $table->id( 'id' );
                 $table->string( 'name' );
                 $table->integer( 'provider_id' );
                 $table->float( 'value', 18, 5 )->default( 0 );

@@ -37,11 +37,16 @@
             </div>
             <div id="grid-items" class="overflow-y-auto h-full flex-col flex">
                 <div v-if="hasCategories" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                    <div @click="loadCategories( category )" v-for="category of categories" :key="category.id" 
-                        class="cell-item w-full h-36 cursor-pointer border flex flex-col items-center justify-center overflow-hidden relative">
+                    <div @click="loadCategories( category )" v-for="category of tables" :key="category.id" 
+                        :class="[
+                'cell-item w-full h-36 cursor-pointer border flex flex-col items-center justify-center overflow-hidden relative',
+                category.available ? 'bg-green-200' : 'bg-red-200'
+            ]">
+            
                         <div class="h-full w-full flex items-center justify-center">
                             <img v-if="category.preview_url" :src="category.preview_url" class="object-cover h-full" :alt="category.name">
                             <i class="las la-image text-6xl" v-if="! category.preview_url"></i>
+                            
                         </div>
                         <div class="w-full absolute z-10 -bottom-10">
                             <div class="cell-item-label relative w-full flex items-center justify-center -top-10 h-20 py-2">
@@ -95,13 +100,14 @@ import switchTo from "~/libraries/pos-section-switch";
 import nsPosSearchProductVue from '~/popups/ns-pos-search-product.vue';
 import { __ } from '~/libraries/lang';
 import { nsCurrency, nsRawCurrency } from '~/filters/currency';
-
+import table from '../../setup/data.json'
 export default {
     name: 'ns-pos-grid',
     data() {
         return {
             items: Array.from({length: 1000}, (_, index) => ({ data: '#' + index })),
             products: [],
+            tables:table.tables,
             categories: [],
             breadcrumbs: [],
             barcode: '',
@@ -159,6 +165,7 @@ export default {
         }
     },
     mounted() {
+        console.log(table,'tableee')
         this.loadCategories();
 
         this.settingsSubscriber         =   POS.settings.subscribe( settings => {
